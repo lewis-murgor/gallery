@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Create your models here.
@@ -58,6 +59,13 @@ class Image(models.Model):
     @classmethod
     def filter_by_location(cls,location):
         image = cls.objects.filter(location = location)
-        return location
+        return image
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        image = cls.objects.filter(name__icontains=search_term)
+        return image
+
+    
 
 
