@@ -98,6 +98,6 @@ class ImageTestClass(TestCase):
 
     def test_filter_by_location(self):
         image = Image.filter_by_location(self.eldoret)
-        self.assertTrue(image)
+        self.assertTrue(len(image))
 
     
