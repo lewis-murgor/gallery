@@ -2,14 +2,18 @@
 
 {% block content %}
 {{block.super}}
-<div class="container">
+<div class="container-fluid">
     
-    <div class="row">
-        {% for photo in photos %}
-        <div class="col-xs-6 col-sm-6 col-md-4 mt-3 col-lg-4">
+    
+    {% for photo in photos %}
+    <div class="row"></div>
+        <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
             <div class="panel panel-default">
                 <a href="{% url 'image' photo.id %}"><img src="{{photo.image.url}}" class="img-responsive" alt="Image" style="width: 1000px; height: 600px;"></a>
             </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-5 col-lg-5">
+            <h3><em>{{photo.name}}</em></h3>
         </div>
     </div>
     
