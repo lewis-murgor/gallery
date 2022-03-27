@@ -27,3 +27,14 @@ def image(request,image_id):
     except Image.DoesNotExist:
         raise Http404()
     return render(request,"image.html", {"image":image})
+
+def filter_location(request):
+    if 'image' in request.GET and request.GET["image"]:
+        location = request.GET.get("image")
+        filtered_images = Image.filter_by_location(location)
+
+        return render(request, 'location.html',{"pics": filtered_images})
+
+    else:
+        message = "You haven't searched for any location"
+        return render(request, 'location.html',{"message":message})
