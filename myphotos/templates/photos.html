@@ -3,25 +3,21 @@
 {% block content %}
 {{block.super}}
 <div class="container">
-    {% for photo in photos %}
-
     <div class="row">
-        <div class="col-md-4">
+        {% for photo in photos %}
+        <div class="col-xs-6 col-sm-6 col-md-4 mt-3 col-lg-4">
             <div class="panel panel-default">
-                <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
-                <div class="panel-body">
-                    <p> {{ photo.name }}  </p>
-                    <p>{{photo.description}}</p>
-                    <p>{{photo.date|date:"l d F Y, H:i"}}</p>
-                </div>
+                <a href="{% url 'image' photo.id %}"><img src="{{photo.image.url}}" class="img-responsive" alt="Image" style="width: 1000px; height: 600px;"></a>
             </div>
         </div>
     </div>
-
+    
     {% empty %}
     <div class="row">
-      <h2 class="text-center">There No images yet</h2>
+      <h2 class="text-center">There are No images yet</h2>
     </div>
     {% endfor %}
+
+    
 </div>
 {% endblock %}
