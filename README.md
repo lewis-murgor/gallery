@@ -1,9 +1,12 @@
 # My Gallery
 
-#### A wwebsite that displays different photos and their details.
+#### A website that displays different photos and their details.
 
 #### By **Lewis Murgor**
 
+## Below is a part of the project.
+
+<img src="project.png">
 
 ## Description
 This is a website that displays different photos and their details.A user can also search the image categories and location.
@@ -18,7 +21,7 @@ This is a website that displays different photos and their details.A user can al
 The application has no known bugs.
 
 ## Live Site
-The live link of the project is  
+The live link of the project is  https://gallery-lewis.herokuapp.com/
 
 ## Technologies Used
 * Python
