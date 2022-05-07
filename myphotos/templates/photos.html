@@ -1,21 +1,24 @@
 {%extends 'base.html'%}
+{% load static%}
 
 {% block content %}
 {{block.super}}
+
 <div class="container-fluid">
     
-    
     {% for photo in photos %}
-    <div class="row"></div>
-        <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
-            <div class="panel panel-default">
-                <a href="{% url 'image' photo.id %}"><img src="{{photo.image.url}}" class="img-responsive" alt="Image" style="width: 1000px; height: 690px;"></a>
+    
+    <div class="col-sm-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="{% url 'image' photo.id %}"><img src="{{photo.image.url}}" class="img-responsive" alt="Image"  ></a>
+            <div class="panel-body">
+                <p class="text-center"><em>{{photo.name}}</em></p>
             </div>
+            
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-5 col-lg-5">
-            <h3><em>{{photo.name}}</em></h3>
-        </div>
+        
     </div>
+    
     
     {% empty %}
     <div class="row">
